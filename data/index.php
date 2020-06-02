@@ -12,6 +12,7 @@ body { font-family:Arial,Helvetica,sans-serif; background-color:#336699; }
 <?php
 $urls=file("data.txt",FILE_IGNORE_NEW_LINES);
 foreach($urls as $url) {
+	if($url=="") continue;
 	$img="images/".basename($url).".png";
 	echo "<div class=\"grid-item\"><a href=\"${url}\" target=\"_blank\"><img src=\"${img}\"/></a></div>\n";
 }
