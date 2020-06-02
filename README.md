@@ -1,2 +1,2 @@
 # lluisgesa
-Recull de missatges d'en Lluis Gesa, amic i company de lluita, mai t'oblidarem!!!
+Recull de missatges pel Lluis Gesa, bon amic i company de lluita, mai t'oblidare!!!
