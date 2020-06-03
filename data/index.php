@@ -13,8 +13,21 @@ body { font-family:Arial,Helvetica,sans-serif; background-color:#336699; }
 $urls=file("data.txt",FILE_IGNORE_NEW_LINES);
 foreach($urls as $url) {
 	if($url=="") continue;
-	$img="images/".basename($url).".png";
-	echo "<div class=\"grid-item\"><a href=\"${url}\" target=\"_blank\"><img src=\"${img}\"/></a></div>\n";
+	if(strpos($url,"|")!==false) {
+		$temp=explode("|",$url);
+		$url=$temp[0];
+		$img="images/".$temp[1].".png";
+	} else {
+		$img="images/".basename($url).".png";
+	}
+	if(strpos($url,"://")===false) {
+		$url="";
+	}
+	echo "<div class=\"grid-item\">";
+	if($url!="") echo "<a href=\"${url}\" target=\"_blank\">";
+	echo "<img src=\"${img}\"/>";
+	if($url!="") echo "</a>";
+	echo "</div>\n";
 }
 ?>
 </div>
