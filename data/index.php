@@ -18,9 +18,9 @@ foreach($urls as $url) {
 	if(strpos($url,"|")!==false) {
 		$temp=explode("|",$url);
 		$url=$temp[0];
-		$img="images/".$temp[1].".png";
+		$img="images/".$temp[1].".jpg";
 	} else {
-		$img="images/".basename($url).".png";
+		$img="images/".basename($url).".jpg";
 	}
 	if(strpos($url,"://")===false) {
 		$url="";
