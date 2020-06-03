@@ -2,6 +2,8 @@
 <html>
 <head>
 <title>Lluis Gesa, 1976-2020</title>
+<meta name="description" content="Recull de missatges pel Lluis Gesa, bon amic i company de lluita, mai t'oblidare!!!" />
+<meta name="keywords" content="lluis gesa 1976 2020"/>
 <style>
 body { font-family:Arial,Helvetica,sans-serif; background-color:#336699; }
 .grid-item { margin:0 10px 7px 0; }
