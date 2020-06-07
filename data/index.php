@@ -8,6 +8,7 @@
 body { font-family:Arial,Helvetica,sans-serif; background-color:#336699; }
 .grid { margin:0 auto; }
 .grid-item { margin:0 10px 7px 0; }
+img { width:300px; }
 </style>
 </head>
 <body>
