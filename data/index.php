@@ -8,7 +8,6 @@
 body { font-family:Arial,Helvetica,sans-serif; background-color:#336699; }
 .grid { margin:0 auto; }
 .grid-item { margin:0 10px 7px 0; }
-img { width:300px; }
 </style>
 </head>
 <body>
@@ -27,9 +26,13 @@ foreach($urls as $url) {
 	if(strpos($url,"://")===false) {
 		$url="";
 	}
+	$temp=imagecreatefromjpeg("../${img}");
+	$w=intval(imagesx($temp)/2);
+	$h=intval(imagesy($temp)/2);
+	imagedestroy($temp);
 	echo "<div class=\"grid-item\">";
 	if($url!="") echo "<a href=\"${url}\" target=\"_blank\">";
-	echo "<img src=\"${img}\"/>";
+	echo "<img src=\"${img}\" width=\"${w}\" height=\"${h}\"/>";
 	if($url!="") echo "</a>";
 	echo "</div>\n";
 }
@@ -37,13 +40,10 @@ foreach($urls as $url) {
 </div>
 <script src="js/jquery.min.js"></script>
 <script src="js/masonry.pkgd.min.js"></script>
-<script src="js/imagesloaded.pkgd.min.js"></script>
 <script>
-var $grid=$('.grid').imagesLoaded(function() {
-	$grid.masonry({
-		itemSelector:'.grid-item',
-		fitWidth:true,
-	});
+$(".grid").masonry({
+	itemSelector:".grid-item",
+	fitWidth:true,
 });
 </script>
 </body>
