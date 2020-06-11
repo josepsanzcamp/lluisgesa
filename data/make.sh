@@ -12,14 +12,15 @@ if [ ! -d "data" -o ! -d "images" ]; then
 	exit
 fi
 
-# generar el index.html
-cd data
-php index.php > ../index.html
-cd ..
-
 # fer un check a les imatges
 cd images
 for i in $(php ../data/checkimg.php); do
 	php ../data/fiximages.php $i
 done
 cd ..
+
+# generar el index.html
+cd data
+php index.php > ../index.html
+cd ..
+
