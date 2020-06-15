@@ -5,5 +5,6 @@ foreach($files as $file) {
 	$width=imagesx($img);
 	imagedestroy($img);
 	if($width!=600) echo $file."\n";
+	if(pathinfo($file,PATHINFO_EXTENSION)!="jpg") echo $file."\n";
 }
 ?>
